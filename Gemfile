@@ -71,3 +71,7 @@ end
 
 gem "simple-navigation"
 gem "simple-navigation-bootstrap"
+
+group :development do
+      gem 'guard-livereload', require: false
+end
