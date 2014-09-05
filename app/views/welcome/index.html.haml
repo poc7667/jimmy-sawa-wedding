@@ -1,2 +1,86 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+!!!
+%html{:lang => "en-US"}
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{:href => asset_path("timeline_assets/css/reset.css"), :rel => "stylesheet"}/
+    / CSS reset
+    %link{:href => asset_path("timeline_assets/css/style.css"), :rel => "stylesheet"}/
+    / Resource style
+    %script{:src => asset_path("timeline_assets/js/modernizr.js")}
+    / Modernizr
+    %title C + K | 我們要結婚了
+    = render("header_javascripts")
+  %body.home.blog
+    / START Navigation for mobile devices
+    %nav.top-bar.show-for-large-down.nav
+      %ul.title-area
+        %li.name Navigate to...
+        %li.toggle-topbar.menu-icon
+          %a{:href => "#"}
+            %span
+      %section.top-bar-section
+        %ul#menu-primary
+        - @sections.each do |link, title|
+          %li
+            %a{:href => "##{link}"} #{title}
+    / END Navigation for mobile devices
+    .row.collapse
+      %aside.large-3.columns.hide-for-medium-down
+        .side-nav-container.nav
+          %h1.logo
+            %a{:href => "#main"} #{@role[:bride][0]} + #{@role[:bridegroom][0]}
+          %nav.hide-for-large-down
+            %ul#menu-primary.side-nav.primary-nav
+              - @sections.each do |link, title|
+                %li
+                  %a{:href => "##{link}"} #{title}
+
+        / END .nav-container
+      #main.large-9.columns
+        %section.hero-content
+          .widget.widget_chills_name_selection_widget.clearfix
+            %header
+              %h2.section-title
+                %span
+                  Sawa
+                %em and
+                %span
+                  Jimmy
+            / %p.subline Invite You to Celebrate At their Wedding
+            %p.subline 邀請您一起參與我們的婚禮
+          %img{:alt => "", :height => "599", :src => asset_path("images/hero.jpg"), :width => "1102"}/
+          .widget.widget_chills_details_selection_widget.clearfix
+            .row.divider.date-section
+              .large-6.small-12.columns
+                .date-container.col-1
+                  %span.day-date
+                    Thursday, September
+                  %span.day-year.accent
+                    2014
+              .large-6.small-12.columns
+                .date-container.col-2
+                  %span.day-time
+                    Five O'Clock in the evening
+                  %span.day-location.accent
+                    Sheraton Towers
+                  %span.day-address
+                    123 Las Ramblas, Barcelona
+                  %span.day-meta
+                    dinner + dancing to follow
+            / END .row divider date-section
+        / END .hero-content
+        .widget.widget_chills_callout_widget.clearfix.callout
+          %a.button.radius.js-scroll{:href => "Click%20here%20to%20RSVP%20today.html"}
+            %i.fa.fa-envelope
+            %span.btn-label
+              Click here to RSVP today
+        - @sections.each do |link, title|
+          = render(link)
+        = render("footer")
+        = render("footer_javascripts")
+
+        %script{:src => asset_path("timeline_assets/js/main.js")}
+
+      / END main
