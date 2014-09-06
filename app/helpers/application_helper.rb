@@ -4,7 +4,8 @@ module ApplicationHelper
 
     def page_sections
       [
-        ["our_story", "我們的故事"],
+        # ["our_story", "我們的故事"],
+        ["about_us", "我們的主角"],
         ["photos", "幸福的影像"],
         # ["bridesmaids", "關於伴娘"],
         # ["groomsmen", "關於伴郎"],
@@ -18,7 +19,6 @@ module ApplicationHelper
 
     def info
       {
-
         location: {
           name: "香草花緣",
           url: "http://www.herbgarden.com.tw/index.html",
