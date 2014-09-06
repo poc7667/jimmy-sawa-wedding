@@ -1,4 +1,56 @@
+# encoding: utf-8
+
 module ApplicationHelper
+
+    def page_sections
+      [
+        ["our_story", "我們的故事"],
+        ["photos", "幸福的影像"],
+        # ["bridesmaids", "關於伴娘"],
+        # ["groomsmen", "關於伴郎"],
+        # ["gifts", "禮物"],
+        ["schedule", "宴會流程"],
+        ["rsvp", "敬邀參加"],
+        ["location", "如何前往"],
+        # ["blog", "許多小故事"]
+      ]
+    end
+
+    def info
+      {
+
+        location: {
+          name: "香草花緣",
+          url: "http://www.herbgarden.com.tw/index.html",
+          address: "新北市泰山區磚雅厝10號(新泰國中後方備停車場)"
+        },
+        date: Date.parse("2014-09-07"),
+        time: "AM 11:30",
+        meta: "自助婚宴"
+      }
+    end
+
+    def role
+      {
+        en:{
+          bride: "Sawa",
+          bridegroom: "Jimmy"
+        },
+        tw:{
+          bride: "旻臻",
+          bridegroom: "育誌"
+        }
+      }
+    end
+
+    def nav_title
+      "#{role[:en][:bride][0]} + #{role[:en][:bridegroom][0]}"
+    end
+
+    def page_title
+      "#{role[:tw][:bride]} + #{role[:tw][:bridegroom]}"
+    end
+
 
     #    Returns the full title on a per-page basis.
     def full_title(page_title)
