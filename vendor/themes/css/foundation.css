@@ -2903,11 +2903,11 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #008cba;
+  color: #ffffff;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #0078a0; }
+    color: #000; }
   a img {
     border: none; }
 
@@ -3339,14 +3339,15 @@ ul.pagination {
     font-size: 0.875rem; }
     .side-nav li a:not(.button) {
       display: block;
-      color: #008cba;
+      /*color: #008cba;*/
       margin: 0;
       padding: 0.4375rem 0.875rem; }
       .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
         background: rgba(0, 0, 0, 0.025);
-        color: #1cc7ff; }
+        color: #000;
+      }
     .side-nav li.active > a:first-child:not(.button) {
-      color: #1cc7ff;
+      /*color: #1cc7ff;*/
       font-weight: normal;
       font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
     .side-nav li.divider {
