@@ -1,0 +1,19 @@
+!!!
+%html{:lang => "en-US"}
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %link{:href => asset_path("timeline_assets/css/reset.css"), :rel => "stylesheet"}/
+    / CSS reset
+    %link{:href => asset_path("timeline_assets/css/style.css"), :rel => "stylesheet"}/
+    / Resource style
+    %script{:src => asset_path("timeline_assets/js/modernizr.js")}
+    / Modernizr
+    %title #{page_title} | 我們要結婚了
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = render("header_javascripts")
+  %body.home.blog
+    = yield
