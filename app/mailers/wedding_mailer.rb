@@ -1,14 +1,9 @@
 class WeddingMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "sawa-jimmy-wedding@#{ENV['mailgun_domain']}"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.wedding_mailer.rsvp.subject
-  #
-  def rsvp
+  def rsvp(content)
     @greeting = "Hi"
-
-    mail to: "to@example.org"
+    @content = content.to_s
+    mail to: "contact_us@#{ENV['mailgun_domain']}"
   end
 end

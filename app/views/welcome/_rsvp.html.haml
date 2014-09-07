@@ -3,15 +3,8 @@
     %h2.section-title RSVP
     %span.hearts
   .small-12.large-10.large-centered.columns
-    #wpcf7-f141-o1.wpcf7{:dir => "ltr", :lang => "en-US"}
-      .screen-reader-response
-      %form.wpcf7-form.rsvp-form.custom{:action => "http://wp.themechills.com/eternity/#wpcf7-f141-o1", :method => "post", :name => "", :novalidate => "novalidate"}
-        %div{:style => "display: none;"}
-          %input{:name => "_wpcf7", :type => "hidden", :value => "141"}/
-          %input{:name => "_wpcf7_version", :type => "hidden", :value => "3.9.1"}/
-          %input{:name => "_wpcf7_locale", :type => "hidden", :value => "en_US"}/
-          %input{:name => "_wpcf7_unit_tag", :type => "hidden", :value => "wpcf7-f141-o1"}/
-          %input{:name => "_wpnonce", :type => "hidden", :value => "5fcaee27fd"}/
+    .screen-reader-response
+      = form_tag('/welcome/rsvp', :method => :post) do
         %fieldset.rsvp-details
           %legend
             Kindly respond by
@@ -20,36 +13,36 @@
             %br/
           .row
             .large-6.columns
-              %label{:for => "firstname"} First Name
+              %label{:for => "firstname"} 名字
               %span.wpcf7-form-control-wrap.firstname
                 %input#firstname.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.input-field{"aria-invalid" => "false", "aria-required" => "true", :name => "firstname", :placeholder => "Your first name is required", :size => "40", :type => "text", :value => ""}/
               %br/
             .large-6.columns
-              %label{:for => "lastname"} Last Name
+              %label{:for => "lastname"} 姓氏
               %span.wpcf7-form-control-wrap.lastname
                 %input#lastname.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.input-field{"aria-invalid" => "false", "aria-required" => "true", :name => "lastname", :placeholder => "Your last name is required", :size => "40", :type => "text", :value => ""}/
               %br/
           .row
             .large-6.columns
-              %label{:for => "email"} Email
+              %label{:for => "email"} Email 電子信箱
               %span.wpcf7-form-control-wrap.email
                 %input#email.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email.input-field{"aria-invalid" => "false", "aria-required" => "true", :name => "email", :placeholder => "name@yourdomain.com", :size => "40", :type => "email", :value => ""}/
               %br/
             .large-6.columns
-              %label{:for => "email"} Phone
+              %label{:for => "email"} Phone 手機號碼
               %span.wpcf7-form-control-wrap.phone
                 %input#phone.wpcf7-form-control.wpcf7-text.wpcf7-tel.wpcf7-validates-as-tel.input-field{"aria-invalid" => "false", :name => "phone", :placeholder => "A phone number is optional", :size => "40", :type => "tel", :value => ""}/
               %br/
         %fieldset.rsvp-attendance
-          %legend Will you be attending?
+          %legend 您是誰的朋友
           .row
             .large-6.columns
               %span.wpcf7-form-control-wrap.attendance
                 %span.wpcf7-form-control.wpcf7-radio
                   %span.wpcf7-list-item.first.last
-                    %input{:name => "attendance", :type => "radio", :value => "Accepts with Pleasure!"}>/
+                    %input{:name => "attendance", :type => "radio", :value => "bride"}>/
                      
-                    %span.wpcf7-list-item-label Accepts with Pleasure!
+                    %span.wpcf7-list-item-label 新娘朋友
               %br/
             .large-6.columns
               %span.wpcf7-form-control-wrap.attendance
@@ -57,31 +50,12 @@
                   %span.wpcf7-list-item.first.last
                     %input{:name => "attendance", :type => "radio", :value => "Declines with Regret."}>/
                      
-                    %span.wpcf7-list-item-label Declines with Regret.
-              %br/
-        %fieldset.rsvp-meal-choice
-          %legend Please select your meal choices
-          .row
-            .large-6.columns
-              %label{:for => "main-course"} Main Course
-              %span.wpcf7-form-control-wrap.main-course
-                %select#main-course.wpcf7-form-control.wpcf7-select{"aria-invalid" => "false", :name => "main-course"}
-                  %option{:value => "None"} None
-                  %option{:value => "Chicken"} Chicken
-                  %option{:value => "Beef"} Beef
-                  %option{:value => "Vegetarian"} Vegetarian
-              %br/
-            .large-6.columns
-              %label{:for => "dessert"} Dessert
-              %span.wpcf7-form-control-wrap.dessert
-                %select#dessert.wpcf7-form-control.wpcf7-select{"aria-invalid" => "false", :name => "dessert"}
-                  %option{:value => "None"} None
-                  %option{:value => "Chocolate Cake"} Chocolate Cake
-                  %option{:value => "Lemon Cheesecake"} Lemon Cheesecake
-                  %option{:value => "Key Lime Pie"} Key Lime Pie
+                    %span.wpcf7-list-item-label 新郎朋友
               %br/
         %p
-          %input#js-submit-btn.wpcf7-form-control.wpcf7-submit.button.radius{:type => "submit", :value => "Send"}/
+        %div.center
+          %input.button.radius{:type => "submit", :value => "Send"}/
+
         %p
           For any questions please email us:
           %a{:href => "mailto:info@yourdomain.com", :title => "E-mail Us"} info@yourdomain.com
