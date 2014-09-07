@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'test/index'
 
   get 'welcome/index'
+  post 'welcome/rsvp'
 
   get 'welcome/reply'
 
