@@ -1,0 +1,61 @@
+%section#rsvp.row
+  %header.section-title-container
+    %h2.section-title RSVP
+    %span.hearts
+  .small-12.large-10.large-centered.columns
+    .screen-reader-response
+      = form_tag('/welcome/rsvp', :method => :post) do
+        %fieldset.rsvp-details
+          %legend
+            Kindly respond by
+            = succeed "." do
+              %strong March 14, 2014
+            %br/
+          .row
+            .large-6.columns
+              %label{:for => "firstname"} 名字
+              %span.wpcf7-form-control-wrap.firstname
+                %input#firstname.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.input-field{"aria-invalid" => "false", "aria-required" => "true", :name => "firstname", :placeholder => "Your first name is required", :size => "40", :type => "text", :value => ""}/
+              %br/
+            .large-6.columns
+              %label{:for => "lastname"} 姓氏
+              %span.wpcf7-form-control-wrap.lastname
+                %input#lastname.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.input-field{"aria-invalid" => "false", "aria-required" => "true", :name => "lastname", :placeholder => "Your last name is required", :size => "40", :type => "text", :value => ""}/
+              %br/
+          .row
+            .large-6.columns
+              %label{:for => "email"} Email 電子信箱
+              %span.wpcf7-form-control-wrap.email
+                %input#email.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email.input-field{"aria-invalid" => "false", "aria-required" => "true", :name => "email", :placeholder => "name@yourdomain.com", :size => "40", :type => "email", :value => ""}/
+              %br/
+            .large-6.columns
+              %label{:for => "email"} Phone 手機號碼
+              %span.wpcf7-form-control-wrap.phone
+                %input#phone.wpcf7-form-control.wpcf7-text.wpcf7-tel.wpcf7-validates-as-tel.input-field{"aria-invalid" => "false", :name => "phone", :placeholder => "A phone number is optional", :size => "40", :type => "tel", :value => ""}/
+              %br/
+        %fieldset.rsvp-attendance
+          %legend 您是誰的朋友
+          .row
+            .large-6.columns
+              %span.wpcf7-form-control-wrap.attendance
+                %span.wpcf7-form-control.wpcf7-radio
+                  %span.wpcf7-list-item.first.last
+                    %input{:name => "attendance", :type => "radio", :value => "bride"}>/
+                     
+                    %span.wpcf7-list-item-label 新娘朋友
+              %br/
+            .large-6.columns
+              %span.wpcf7-form-control-wrap.attendance
+                %span.wpcf7-form-control.wpcf7-radio
+                  %span.wpcf7-list-item.first.last
+                    %input{:name => "attendance", :type => "radio", :value => "Declines with Regret."}>/
+                     
+                    %span.wpcf7-list-item-label 新郎朋友
+              %br/
+        %p
+        %div.center
+          %input.button.radius{:type => "submit", :value => "Send"}/
+
+        %p
+          For any questions please email us:
+          %a{:href => "mailto:info@yourdomain.com", :title => "E-mail Us"} info@yourdomain.com

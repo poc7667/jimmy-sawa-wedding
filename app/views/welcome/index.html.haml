@@ -1,0 +1,67 @@
+/ START Navigation for mobile devices
+%nav.top-bar.show-for-large-down.nav
+  %ul.title-area
+    %li.name Navigate to...
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span
+  %section.top-bar-section
+    %ul#menu-primary
+    - page_sections.each do |link, title|
+      %li
+        %a{:href => "##{link}"} #{title}
+/ END Navigation for mobile devices
+.row.collapse
+  %aside.large-3.columns.hide-for-medium-down
+    .side-nav-container.nav
+      %h1.logo
+        %a{:href => "#main"} #{nav_title}
+      %nav.hide-for-large-down
+        %ul#menu-primary.side-nav.primary-nav
+          - page_sections.each do |link, title|
+            %li
+              %a{:href => "##{link}"} #{title}
+    / END .nav-container
+  #main.large-9.columns
+    %section.hero-content
+      .widget.widget_chills_name_selection_widget.clearfix
+        %header
+          %h2.section-title
+            %span
+              #{role[:en][:bride]}
+            %em and
+            %span
+              #{role[:en][:bridegroom]}
+        / %p.subline Invite You to Celebrate At their Wedding
+        %p.subline 邀請您一起參與我們的婚禮
+      %img{:alt => "", :src => asset_path("images/hero.jpg"), :width => "800"}/
+      .widget.widget_chills_details_selection_widget.clearfix
+        .row.divider.date-section
+          .large-6.small-12.columns
+            .date-container.col-1
+              %span.day-time
+                #{info[:time]}
+              %span.day-date
+                #{info[:date].strftime("%A")}, #{info[:date].month}
+              %span.day-year.accent
+                #{info[:date].year}
+          .large-6.small-12.columns
+            .date-container.col-2
+              %span.day-location.accent
+                = link_to info[:location][:name], info[:location][:url], :target => "_blank"
+              %span.day-meta
+                #{info[:meta]}
+        / END .row divider date-section
+    / END .hero-content
+    .widget.widget_chills_callout_widget.clearfix.callout
+      %a.button.radius.js-scroll{:href => "Click%20here%20to%20RSVP%20today.html"}
+        %i.fa.fa-envelope
+        %span.btn-label
+          Click here to RSVP today
+    - page_sections.each do |link, title|
+      = render(link)
+    = render("footer")
+    = render("footer_javascripts")
+
+    %script{:src => asset_path("timeline_assets/js/main.js")}
+  / END main

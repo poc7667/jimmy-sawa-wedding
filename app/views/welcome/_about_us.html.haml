@@ -1,0 +1,20 @@
+%section#about_us.row
+  %header.section-title-container
+    %h2.section-title About Us
+    %span.hearts
+  .small-12.large-10.large-centered.columns
+    .row
+      .small-12.large-6.columns
+        %a{:href => asset_path("images/bride.jpg")}
+          %img.alignnone.size-full.wp-image-381{:alt => "bride", :height => "691", :src => asset_path("images/bride.jpg"), :width => "581"}/
+        %blockquote.caption-2
+          %p When I hear the buzz of the little world among the stalks, and
+          %p{:style => "text-align: right;"}
+            %strong - #{role[:tw][:bride]}
+      .small-12.large-6.columns
+        %a{:href => asset_path("images/groom.jpg")}
+          %img.alignnone.size-full.wp-image-382{:alt => "Groom", :height => "691", :src => asset_path("images/groom.jpg"), :width => "581"}/
+        %blockquote.caption-1
+          %p A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+          %p{:style => "text-align: right;"}
+            %strong - #{role[:tw][:bridegroom]}
