@@ -7,9 +7,9 @@
       = form_tag('/welcome/rsvp', :method => :post) do
         %fieldset.rsvp-details
           %legend
-            Kindly respond by
+            Kindly respond before
             = succeed "." do
-              %strong March 14, 2014
+              %strong #{info[:date]}
             %br/
           .row
             .large-6.columns
@@ -36,26 +36,40 @@
         %fieldset.rsvp-attendance
           %legend 您是誰的朋友
           .row
+          - [[:brides_relatives, "新娘方親戚"],[:bride, "新娘朋友"], [:bridegrooms_relatives, "新郎方親戚"],[:bridegroom, "新郎朋友"]].each_with_index do |(en,tw), i|
             .large-6.columns
-              %span.wpcf7-form-control-wrap.attendance
-                %span.wpcf7-form-control.wpcf7-radio
-                  %span.wpcf7-list-item.first.last
-                    %input{:name => "attendance", :type => "radio", :value => "bride"}>/
-                     
-                    %span.wpcf7-list-item-label 新娘朋友
-              %br/
+              = label_tag "attendance_#{en}" do
+                = radio_button_tag :attendance, en , class: "need_check"
+                = tw
+        %fieldset.rsvp-food
+          %legend 用餐選擇
+          .row
+          - [[:general_food, "葷食"], [:vagetarian, "素食"]].each_with_index do |(en,tw), i|
             .large-6.columns
-              %span.wpcf7-form-control-wrap.attendance
-                %span.wpcf7-form-control.wpcf7-radio
-                  %span.wpcf7-list-item.first.last
-                    %input{:name => "attendance", :type => "radio", :value => "Declines with Regret."}>/
-                     
-                    %span.wpcf7-list-item-label 新郎朋友
-              %br/
+              = label_tag "food_#{en}" do
+                = radio_button_tag :food, en , class: "need_check"
+                = tw
+          / .row
+          /   .large-6.columns
+          /     %span.wpcf7-form-control-wrap.attendance
+          /       %span.wpcf7-form-control.wpcf7-radio
+          /         %span.wpcf7-list-item.first.last
+          /           %input{:name => "attendance", :type => "radio", :value => "bride"}>/
+          /            
+          /           %span.wpcf7-list-item-label 新娘朋友
+          /     %br/
+          /   .large-6.columns
+          /     %span.wpcf7-form-control-wrap.attendance
+          /       %span.wpcf7-form-control.wpcf7-radio
+          /         %span.wpcf7-list-item.first.last
+          /           %input{:name => "attendance", :type => "radio", :value => "Declines with Regret."}>/
+          /            
+          /           %span.wpcf7-list-item-label 新郎朋友
+          /     %br/
         %p
         %div.center
           %input.button.radius{:type => "submit", :value => "Send"}/
 
         %p
           For any questions please email us:
-          %a{:href => "mailto:info@yourdomain.com", :title => "E-mail Us"} info@yourdomain.com
+          %a{:href => "mailto:#{contact[:email]}", :title => "E-mail Us"} #{contact[:email]}
