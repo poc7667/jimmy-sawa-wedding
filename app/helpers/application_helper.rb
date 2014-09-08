@@ -17,6 +17,12 @@ module ApplicationHelper
       ]
     end
 
+    def contact
+      {
+        email: "poc7667@gmail.com"
+      }
+    end
+
     def info
       {
         location: {
@@ -26,7 +32,8 @@ module ApplicationHelper
         },
         date: Date.parse("2014-09-07"),
         time: "AM 11:30",
-        meta: "自助婚宴"
+        meta: "自助婚宴",
+        footer_title: "#{page_title} 幸福婚禮(前序-訂婚篇)"
       }
     end
 
