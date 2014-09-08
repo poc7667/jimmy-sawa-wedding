@@ -13,8 +13,16 @@ module ApplicationHelper
         ["schedule", "宴會流程"],
         ["rsvp", "敬邀參加"],
         ["location", "如何前往"],
+        ["behind_scene", "幕後花序"],
+        ["to_be_continue", "還有更多"]
         # ["blog", "許多小故事"]
       ]
+    end
+
+    def contact
+      {
+        email: "poc7667@gmail.com"
+      }
     end
 
     def info
@@ -26,7 +34,8 @@ module ApplicationHelper
         },
         date: Date.parse("2014-09-07"),
         time: "AM 11:30",
-        meta: "自助婚宴"
+        meta: "自助婚宴",
+        footer_title: "#{page_title} 幸福婚禮(前序-訂婚篇)"
       }
     end
 

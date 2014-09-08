@@ -494,3 +494,18 @@ header h1 {
     transform: translateX(0);
   }
 }
+
+section .cd-timeline-content img{
+  height: 150px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
