@@ -1,0 +1,13 @@
+%section#behind_scene.row
+  %header.section-title-container
+    %h2.section-title 花絮照片
+    %span.hearts
+    %h4  上傳照片功能即將開放
+  .small-12.columns
+    %ul.clearing-thumbs{"data-clearing" => ""}
+      - (0..7).to_a.each  do |i|
+        - img_path ="behind_scene_photos/#{i}.jpg"
+        %li
+          %a{:href => asset_path(img_path)}
+            %img.attachment-full.wp-post-image{:src => asset_path(img_path)}/
+            %span.overlay-label LOVE#{i}

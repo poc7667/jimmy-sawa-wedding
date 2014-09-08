@@ -13,6 +13,8 @@ module ApplicationHelper
         ["schedule", "宴會流程"],
         ["rsvp", "敬邀參加"],
         ["location", "如何前往"],
+        ["behind_scene", "幕後花序"],
+        ["to_be_continue", "還有更多"]
         # ["blog", "許多小故事"]
       ]
     end
